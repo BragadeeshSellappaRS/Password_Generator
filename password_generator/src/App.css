@@ -1,0 +1,56 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+.container-box{
+  background-color: black;
+  padding: 30px;
+  border-radius: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  width: 100%;
+}
+
+.word-criteria{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.pass-box{
+  width: 80%;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: rgb(43, 43, 43);
+  border: none;
+  margin-bottom: 20px;
+  font-size: large;
+}
+
+.num-box{
+  width: 60px;
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  background-color: rgb(43, 43, 43);
+}
+
+.check-box{
+  width: 20px;
+  height: 20px;
+  
+  
+}
+
+.copy-button{
+  background-color: green;
+}
+
+.generate-button{
+  background-color: green;
+  width: 100%;
+}
