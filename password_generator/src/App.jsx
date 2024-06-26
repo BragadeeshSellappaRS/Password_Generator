@@ -1,10 +1,46 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Checkbox from './components/checkbox'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [password,setPassword] = useState({
+    length: 5,
+    uppercase: false,
+    lowercase: false,
+    numbers: false,
+    symbols: false
+  });
+
+  const [handleText,sethandleText] = useState("");
+
+  const handleUppercase = () => {
+    setPassword({
+      ...password,
+      uppercase: !password.uppercase,
+    });
+  }
+
+
+  const handleLowercase = () => {
+    setPassword({
+      ...password,
+      lowercase: !password.lowercase,
+    });
+  }
+
+  const handleNumbers = () => {
+    setPassword({
+      ...password,
+      numbers: !password.numbers,
+    });
+  }
+
+  const handleSymbols = () => {
+    setPassword({
+      ...password,
+      symbols: !password.symbols,
+    });
+  }
 
   return (
     <>
@@ -23,7 +59,7 @@ function App() {
               <label>Password Length</label>
             </div>
             <div>
-              <input type='number' className='num-box'/>
+              <input type='number' className='num-box'value={handleText} onChange={(e)=>setPassword(e.target.value)}/>
             </div>
           </div>
           <div className="word-criteria">
@@ -31,7 +67,7 @@ function App() {
               <label>Include Upper case</label>
             </div>
             <div>
-              <input type='checkbox' className='check-box'></input>
+              <Checkbox value={password.uppercase} onChange={handleUppercase} />
             </div>
           </div>
           <div className="word-criteria">
@@ -39,7 +75,7 @@ function App() {
               <label>Include Lower case</label>
             </div>
             <div>
-              <input type='checkbox' className='check-box'></input>
+              <Checkbox value={password.lowercase} onChange={handleLowercase}/>
             </div>
           </div>
           <div className="word-criteria">
@@ -47,7 +83,7 @@ function App() {
               <label>Include Numbers</label>
             </div>
             <div>
-              <input type='checkbox' className='check-box'></input>
+              <Checkbox value={password.numbers} onChange={handleNumbers}/>
             </div>
           </div>
           <div className="word-criteria">
@@ -55,7 +91,7 @@ function App() {
               <label>Include Symbol</label>
             </div>
             <div>
-              <input type='checkbox' className='check-box'></input>
+              <Checkbox value={password.symbols} onChange={handleSymbols}/>
             </div>
           </div>
           <br />
