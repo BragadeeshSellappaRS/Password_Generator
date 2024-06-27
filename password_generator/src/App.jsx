@@ -65,7 +65,7 @@ function App() {
     const symArray = ["!","@","#","$","%","^","&","*","(",")","-","_",".",","];
     const charArray =  Array.from(Array(26)).map((_e, i) => i+97);
     const lowerCaseLetters = charArray.map(letter => String.fromCharCode(letter));
-    const upperCaseLetters = charArray.map(letter => letter.toUpperCase);
+    const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
 
     const {length, uppercase, lowercase, numbers, symbols} = password; 
 
